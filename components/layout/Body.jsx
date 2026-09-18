@@ -1,0 +1,23 @@
+'use client'
+import { MainContext } from "@/context/MainContext";
+// import { darkMode } from "@/tailwind.config"
+import { useContext } from "react";
+import Navbar from "./Navbar";
+
+const Body = ({children}) => {
+    
+    const {darkMode} = useContext(MainContext)
+
+    return (
+        <body dir="rtl" className={darkMode}>
+            <section className={"bg-blue-100 dark:bg-gray-400 w-full h-screen overflow-auto pr-sidebar_width pt-navbar_height"}>
+                <div className={"w-full p-4"}>
+                    {children}
+                </div>
+            </section>
+            <Navbar/>
+        </body>
+    )
+};
+
+export default Body;
