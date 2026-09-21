@@ -1,17 +1,20 @@
 'use client'
-// import { darkMode } from "@/tailwind.config";
+
 import { createContext, useState } from "react";
 
 export const MainContext = createContext({
-    darkMode: "",
-    setDarkMode: () => { }
+    darkMode:"",
+    setDarkMode: () => {}
 })
 
-const MainContextProvider = ({ children }) => {
+const MainContextProvider = ({children}) => {
     const [darkMode, setDarkMode] = useState("light")
 
     return(
-        <MainContext.Provider value={{darkMode, setDarkMode}}>
+        <MainContext.Provider value={{
+            darkMode,
+            setDarkMode
+        }}>
             {children}
         </MainContext.Provider>
     )

@@ -1,4 +1,5 @@
 // import { Geist, Geist_Mono } from "next/font/google";
+import MainContextProvider from "@/context/MainContext";
 import "./globals.css";
 import Body from "@/components/layout/Body";
 
@@ -20,11 +21,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"      
+      lang="en"
     >
-      <Body>
-        {children}
-      </Body>
+      <MainContextProvider>
+        <Body>
+          {children}
+        </Body>
+      </MainContextProvider>
     </html>
   );
 }
